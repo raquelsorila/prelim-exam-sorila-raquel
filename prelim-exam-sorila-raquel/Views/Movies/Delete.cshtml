@@ -1,0 +1,50 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 style="font-family:Cooper Black; color:#b5e2ff; font-size:30px">Remove Film</h4>
+
+<div style="font-family:Arial; color:#b5e2ff; font-size:15px">
+      <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Remove" class="btn btn-danger" /> |
+        <a style="font-family:Arial; color:#b5e2ff; font-size:15px" asp-action="Index" >Go to Registered Film</a>
+    </form>
+    
+</div>

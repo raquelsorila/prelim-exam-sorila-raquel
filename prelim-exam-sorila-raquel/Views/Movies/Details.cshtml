@@ -1,0 +1,56 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h4 style="font-family:Cooper Black; color:#b5e2ff; font-size:30px">Film Information</h4>
+<div class="custom-container" style="font-family:Arial; color:#b5e2ff; font-size:15px">
+    
+    <div>
+        <hr />
+        <dl class="row not-a-table">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Genre)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Genre)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Rating)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+            <dt class="col-sm-4">
+                Director
+            </dt>
+            <dd class="col-sm-8">
+                @ViewBag.DirectorName
+            </dd>
+        </dl>
+    </div>
+    
+    <div style="font-family:Arial; color:#b5e2ff; font-size:15px;">
+        <a class="btn btn-small btn-success" asp-action="Edit" asp-route-id="@Model.ID">Update</a> |
+        <a style="font-family:Arial; color:#b5e2ff; font-size:15px" asp-action="Index">Go to Registered List</a>
+    </div>
+    
+</div>

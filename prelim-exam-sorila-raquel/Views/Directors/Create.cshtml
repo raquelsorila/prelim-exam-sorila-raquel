@@ -1,0 +1,33 @@
+﻿@model MvcMovie.Models.Director
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 style="font-family:Cooper Black; color:#b5e2ff; font-size:30px">Film Director</h4>
+<hr />
+<div class="row" style="font-family:Arial; color:#b5e2ff; font-size:15px">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <center>
+            <div class="form-group">
+                <input type="submit" value="Add Director" class="btn btn-primary" />
+            </div>
+                </center>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="font-family:Arial; color:#b5e2ff; font-size:15px" asp-action="Index">Go to Director List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

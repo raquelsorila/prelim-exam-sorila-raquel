@@ -1,0 +1,24 @@
+﻿@model MvcMovie.Models.Director
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 style="font-family:Cooper Black; color:#b5e2ff; font-size:30px">Remove Director</h4>
+<div>
+    <hr />
+    <dl class="row" style="font-family:Arial; color:#b5e2ff; font-size:15px">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" style="font-family:Arial; color:#b5e2ff; font-size:15px">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Remove" class="btn btn-danger" /> |
+        <a asp-action="Index" style="font-family:Arial; color:#b5e2ff; font-size:15px">Go to Director List</a>
+    </form>
+</div>

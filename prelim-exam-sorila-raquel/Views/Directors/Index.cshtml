@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MvcMovie.Models.Director>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4 style="font-family:Cooper Black; color:#b5e2ff; font-size:30px">Directors List </h4>
+<p>
+    <a class="btn btn-small btn-outline-light text-light" asp-action="Create">Add Director</a>
+</p>
+
+
+<table class="table" style="font-family:Arial; color:#b5e2ff; font-size:15px">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                
+                <td>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" >
+                        <a class="btn btn-small btn-success" asp-action="Edit" asp-route-id="@item.ID">Update</a>
+                        <a class="btn btn-small btn-secondary" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                        <a class="btn btn-small btn-danger" asp-action="Delete" asp-route-id="@item.ID">Remove</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
