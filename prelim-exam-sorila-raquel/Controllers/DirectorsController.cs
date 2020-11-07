@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using Microsoft.Extensions.Logging.Debug;
 
 namespace MvcMovie.Controllers
 {
@@ -161,6 +163,21 @@ namespace MvcMovie.Controllers
 
             _context.Directors.Remove(director);
             await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost, ActionName("DeleteMovie")]
+        public async Task<IActionResult> DeleteMovie(int id)
+        {
+            var movie = await _context.Movies.Where(i => i.ID == id).ToListAsync();
+            foreach (var mov in movie)
+            {
+                mov.DirectorID = null;
+
+            }
+            await _context.SaveChangesAsync();
+            Console.WriteLine("i am here i guess");
+            Console.WriteLine(id);
             return RedirectToAction(nameof(Index));
         }
 

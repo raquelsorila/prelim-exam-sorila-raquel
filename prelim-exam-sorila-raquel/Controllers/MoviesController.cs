@@ -209,6 +209,7 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+
             var movie = await _context.Movies.FindAsync(id);
             _context.Movies.Remove(movie);
             await _context.SaveChangesAsync();
